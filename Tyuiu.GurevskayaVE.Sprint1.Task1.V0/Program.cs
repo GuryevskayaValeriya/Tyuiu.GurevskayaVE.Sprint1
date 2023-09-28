@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.GurevskayaVE.Sprint1.Task0.V26.Lib;
+using Tyuiu.GurevskayaVE.Sprint1.Task1.V0.Lib;
 
-namespace Tyuiu.GurevskayaVE.Sprint1.Task0.V26
+namespace Tyuiu.GurevskayaVE.Sprint1.Task1.V0
 {
     class Program
     {
@@ -14,27 +14,39 @@ namespace Tyuiu.GurevskayaVE.Sprint1.Task0.V26
             Console.Title = "Спринт #1 | Выполнила: Гурьевская В.Е. | ПКТб-23-2";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #1                                                               *");
-            Console.WriteLine("* Тема: Базовые навыки работы в C#                                        *");
+            Console.WriteLine("* Тема: Организация ввода/вывода в консольных приложениях                 *");
             Console.WriteLine("* Задание #1                                                              *");
-            Console.WriteLine("* Вариант #26                                                              *");
+            Console.WriteLine("* Вариант #29                                                             *");
             Console.WriteLine("* Выполнила: Гурьевская В.Е. | ПКТб-23-2                                  *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая вычисляет выражение                         *");
-            Console.WriteLine("* 4 / 2 * 5 / (3 + 2) * 5 и печатает результат на экране                  *");
+            Console.WriteLine("* Написать программу, которая запрашивает у пользователя исходные данные, *");
+            Console.WriteLine("* вычисляет результат по формуле a * b * c / (a + b + c)                  *");
+            Console.WriteLine("* и печатает его на экране.                                               *");
             Console.WriteLine("*                                                                         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* 4 * 5 / 2 - 18 / 2 / 3                                                  *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("* a * b * c / (a + b + c)                                                 *");
             Console.WriteLine("***************************************************************************");
 
             DataService ds = new DataService();
-            Console.WriteLine(ds.Calculate());
 
-            Console.ReadLine();
+            Console.Write("Введите a: ");
+            double a = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Введите b: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Введите c: ");
+            double c = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine(ds.Calculate(a, b, c));
+
+
+            Console.ReadKey();
         }
     }
 }
